@@ -16,8 +16,8 @@ Software de gestion de prestamos de material de biblioteca.
 
 ## Tabla de contenidos
 
-* [Requerimientos](#Requerimientos)
-* [Uso](#Uso)
+* [Requerimientos](#requerimientos)
+* [Uso](#uso)
 
 
 ## Requerimientos
