@@ -1,3 +1,8 @@
 # Proyecto Final Paradigmas 2017
 
-*Franco Leonardi 2018*
+## Integrantes
+
+* Franco Leonardi
+* Federico Timone
+* Fernando Pereyra Rausch
+* Juan Vera
