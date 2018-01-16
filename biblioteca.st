@@ -115,9 +115,44 @@ Object subclass: #Material
         keywords := unKeyword
     ! !
 
+Material subclass: #Libro
+!
+Material subclass: #Revista
+!
+
+Material subclass: #Video
+!
+
+Material subclass: #Software
+!
+
+Object subclass: #Ejemplar
+    "Mantiene el registro de un ejemplar particular de un material"
+    instanceVariableNames: 'idEjemplar idMaterial fecAlta fecBaja estado'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Biblioteca'
+!
+
+Object subclass: #Prestamo
+    "Mantiene el registro de un préstamo realizado y su devolución."
+    instanceVariableNames: 'idPersona fecPrestamo idEjemplar fecEstDevolucion fecDevolucion'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Biblioteca'
+!
+
+Object subclass: #Cobro
+    "Registra los cobros que se realizan a los usuarios de nivel 2."
+    instanceVariableNames: 'idUsuario fecCobro monto'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Biblioteca'
+!
+
 "
 test := Persona new.
 test idPersona: 0.
 test idPersona printNl.
 test fecNac: (Date year:1997 month:02 day:12 hour:0 minute:0 second:0).
-test edad printNl.
+test edad printNl."
