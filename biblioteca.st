@@ -1,51 +1,121 @@
-Object subclass: Persona [
-    "Mantiene informacion sobre una persona."
-    | idPersona nombre dni fecNac sexo |
+Object  subclass: #Persona
+        instanceVariableNames: 'idPersona nombre dni fecNac sexo'
+        classVariableNames: ''
+        poolDictionaries: ''
+        category: 'Biblioteca'
+        "Clase Persona, mantiene informacion sobre una persona."
+!
 
-    idPersona [^idPersona]
-    idPersona: unId [idPersona := unId]
+!Persona methodsFor: 'accessing'!
+    idPersona
+        ^idPersona
+    !
 
-    nombre [^nombre]
-    nombre: unNombre [nombre := unNombre]
+    idPersona: unId
+        idPersona := unId
+    !
 
-    dni [^dni]
-    dni: nDNI [dni := nDNI]
+    nombre
+        ^nombre
+    !
 
-    fecNac [^Date today]
-    fecNac: unaFecha [fecNac := unaFecha]
+    nombre: unNombre
+        nombre := unNombre
+    !
 
-    edad [^((Date today - fecNac) days / 365) asFloat integerPart asInteger]
+    dni
+        ^dni
+    !
 
-    sexo [^sexo]
-    sexo: unSexo [sexo := unSexo]
-]
+    dni: nDNI
+        dni := nDNI
+    !
 
-Object subclass: Material [
+    fecNac
+        ^Date today
+    !
+
+    fecNac: unaFecha
+        fecNac := unaFecha
+    !
+
+    edad
+        ^((Date today - fecNac) days / 365) asFloat integerPart asInteger
+    !
+
+    sexo
+        ^sexo
+    !
+
+    sexo: unSexo
+        sexo := unSexo
+    ! !
+
+Object subclass: #Material
     "Clase abstracta que representa todo tipo de objeto que pueda prestarse."
-    |idMaterial titulo fecEdicion editorial ISBN ISSN keywords|
+    instanceVariableNames: 'idMaterial titulo fecEdicion editorial ISBN ISSN keywords'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Biblioteca'
+!
 
-    idMaterial [^idMaterial]
-    idMaterial: unID [idMaterial := unID]
+!Material methodsFor: 'accessing'!
+    idMaterial
+        ^idMaterial
+    !
 
-    titulo [^titulo]
-    titulo: unTitulo [titulo := unTitulo]
+    idMaterial: unID
+        idMaterial := unID
+    !
 
-    fecEdicion [^fecEdicion]
-    fecEdicion: unaFecha [fecEdicion := unaFecha]
+    titulo
+        ^titulo
+    !
+    titulo: unTitulo
+        titulo := unTitulo
+    !
 
-    editorial [^editorial]
-    editorial: unaEditorial [editorial := unaEditorial]
+    fecEdicion
+        ^fecEdicion
+    !
 
-    ISBN [^ISBN]
-    ISBN: unISBN [ISBN := unISBN]
+    fecEdicion: unaFecha
+        fecEdicion := unaFecha
+    !
 
-    ISSN [^ISSN]
-    ISSN: unISSN [ISSN := unISSN]
+    editorial
+        ^editorial
+    !
 
-    keywords [^keywords]
-    keywords: unKeyword [keywords := unKeyword]
-]
+    editorial: unaEditorial
+        editorial := unaEditorial
+    !
 
+    ISBN
+        ^ISBN
+    !
+
+    ISBN: unISBN
+        ISBN := unISBN
+    !
+
+    ISSN
+        ^ISSN
+    !
+
+    ISSN: unISSN
+        ISSN := unISSN
+    !
+
+    keywords
+        ^keywords
+    !
+
+    keywords: unKeyword
+        keywords := unKeyword
+    ! !
+
+"
 test := Persona new.
 test idPersona: 0.
 test idPersona printNl.
