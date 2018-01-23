@@ -1,158 +1,374 @@
-Object  subclass: #Persona
-        instanceVariableNames: 'idPersona nombre dni fecNac sexo'
-        classVariableNames: ''
-        poolDictionaries: ''
-        category: 'Biblioteca'
-        "Clase Persona, mantiene informacion sobre una persona."
-!
+<?xml version="1.0"?>
 
-!Persona methodsFor: 'accessing'!
-    idPersona
-        ^idPersona
-    !
+<st-source>
+<time-stamp>From VisualWorks® Personal Use Edition, 8.3 of 28 de julio de 2017 on 18 de enero de 2018 at 23:43:12</time-stamp>
 
-    idPersona: unId
-        idPersona := unId
-    !
 
-    nombre
-        ^nombre
-    !
+<component-created>
+<name>Biblioteca</name> <type>package</type>
+</component-created><!-- Package Biblioteca* -->
 
-    nombre: unNombre
-        nombre := unNombre
-    !
 
-    dni
-        ^dni
-    !
+<component-created>
+<name>Biblioteca</name> <type>package</type>
+</component-created>
 
-    dni: nDNI
-        dni := nDNI
-    !
+<class>
+<name>Material</name>
+<environment>Smalltalk</environment>
+<super>Core.Object</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>idMaterial titulo fechaEdicion editorial ISBN ISSN palabrasClave </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    fecNac
-        ^Date today
-    !
+<class>
+<name>Software</name>
+<environment>Smalltalk</environment>
+<super>Material</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    fecNac: unaFecha
-        fecNac := unaFecha
-    !
+<class>
+<name>Video</name>
+<environment>Smalltalk</environment>
+<super>Material</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    edad
-        ^((Date today - fecNac) days / 365) asFloat integerPart asInteger
-    !
+<class>
+<name>Ejemplar</name>
+<environment>Smalltalk</environment>
+<super>Core.Object</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>idEjemplar idMaterial fechaAlta fechaBaja estado </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    sexo
-        ^sexo
-    !
+<class>
+<name>Prestamo</name>
+<environment>Smalltalk</environment>
+<super>Core.Object</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>idPersona fechaPrestamo idEjemplar fechaEDev fechaRDev </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    sexo: unSexo
-        sexo := unSexo
-    ! !
+<class>
+<name>Cobro</name>
+<environment>Smalltalk</environment>
+<super>Core.Object</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>idUsuario fechaCobro monto </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-Object subclass: #Material
-    "Clase abstracta que representa todo tipo de objeto que pueda prestarse."
-    instanceVariableNames: 'idMaterial titulo fecEdicion editorial ISBN ISSN keywords'
-    classVariableNames: ''
-    poolDictionaries: ''
-    category: 'Biblioteca'
-!
+<class>
+<name>Persona</name>
+<environment>Smalltalk</environment>
+<super>Core.Object</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>idPersona nombre dni fechaNacimiento edad sexo </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-!Material methodsFor: 'accessing'!
-    idMaterial
-        ^idMaterial
-    !
+<class>
+<name>Libro</name>
+<environment>Smalltalk</environment>
+<super>Material</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    idMaterial: unID
-        idMaterial := unID
-    !
+<class>
+<name>Revista</name>
+<environment>Smalltalk</environment>
+<super>Material</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category></category>
+<attributes>
+<package>Biblioteca</package>
+</attributes>
+</class>
 
-    titulo
-        ^titulo
-    !
-    titulo: unTitulo
-        titulo := unTitulo
-    !
+<methods>
+<class-id>Persona class</class-id> <category>instance creation</category>
 
-    fecEdicion
-        ^fecEdicion
-    !
+<body package="Biblioteca" selector="new">new	"Answer a newly created and initialized instance."	^super new initialize</body>
+</methods>
 
-    fecEdicion: unaFecha
-        fecEdicion := unaFecha
-    !
 
-    editorial
-        ^editorial
-    !
+<methods>
+<class-id>Persona</class-id> <category>accessing</category>
 
-    editorial: unaEditorial
-        editorial := unaEditorial
-    !
+<body package="Biblioteca" selector="fechaNacimiento:">fechaNacimiento: anObject	fechaNacimiento := anObject</body>
 
-    ISBN
-        ^ISBN
-    !
+<body package="Biblioteca" selector="dni:">dni: anObject	dni := anObject</body>
 
-    ISBN: unISBN
-        ISBN := unISBN
-    !
+<body package="Biblioteca" selector="edad:">edad: anObject	edad := anObject</body>
 
-    ISSN
-        ^ISSN
-    !
+<body package="Biblioteca" selector="edad">edad	^edad</body>
 
-    ISSN: unISSN
-        ISSN := unISSN
-    !
+<body package="Biblioteca" selector="dni">dni	^dni</body>
 
-    keywords
-        ^keywords
-    !
+<body package="Biblioteca" selector="fechaNacimiento">fechaNacimiento	^fechaNacimiento</body>
 
-    keywords: unKeyword
-        keywords := unKeyword
-    ! !
+<body package="Biblioteca" selector="idPersona:">idPersona: anObject	idPersona := anObject</body>
 
-Material subclass: #Libro
-!
-Material subclass: #Revista
-!
+<body package="Biblioteca" selector="nombre">nombre	^nombre</body>
 
-Material subclass: #Video
-!
+<body package="Biblioteca" selector="nombre:">nombre: anObject	nombre := anObject</body>
 
-Material subclass: #Software
-!
+<body package="Biblioteca" selector="sexo">sexo	^sexo</body>
 
-Object subclass: #Ejemplar
-    "Mantiene el registro de un ejemplar particular de un material"
-    instanceVariableNames: 'idEjemplar idMaterial fecAlta fecBaja estado'
-    classVariableNames: ''
-    poolDictionaries: ''
-    category: 'Biblioteca'
-!
+<body package="Biblioteca" selector="sexo:">sexo: anObject	sexo := anObject</body>
 
-Object subclass: #Prestamo
-    "Mantiene el registro de un préstamo realizado y su devolución."
-    instanceVariableNames: 'idPersona fecPrestamo idEjemplar fecEstDevolucion fecDevolucion'
-    classVariableNames: ''
-    poolDictionaries: ''
-    category: 'Biblioteca'
-!
+<body package="Biblioteca" selector="idPersona">idPersona	^idPersona</body>
+</methods>
 
-Object subclass: #Cobro
-    "Registra los cobros que se realizan a los usuarios de nivel 2."
-    instanceVariableNames: 'idUsuario fecCobro monto'
-    classVariableNames: ''
-    poolDictionaries: ''
-    category: 'Biblioteca'
-!
+<methods>
+<class-id>Persona</class-id> <category>initialize-release</category>
 
-"
-test := Persona new.
-test idPersona: 0.
-test idPersona printNl.
-test fecNac: (Date year:1997 month:02 day:12 hour:0 minute:0 second:0).
-test edad printNl."
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Edit the following to properly initialize instance variables ***"	idPersona := nil.	nombre := nil.	dni := nil.	fechaNacimiento := nil.	edad := nil.	sexo := nil.	" *** And replace this comment with additional initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Material class</class-id> <category>instance creation</category>
+
+<body package="Biblioteca" selector="new">new	"Answer a newly created and initialized instance."	^super new initialize</body>
+</methods>
+
+
+<methods>
+<class-id>Material</class-id> <category>accessing</category>
+
+<body package="Biblioteca" selector="palabrasClave">palabrasClave	^palabrasClave</body>
+
+<body package="Biblioteca" selector="iSBN:">iSBN: anObject	ISBN := anObject</body>
+
+<body package="Biblioteca" selector="idMaterial">idMaterial	^idMaterial</body>
+
+<body package="Biblioteca" selector="fechaEdicion:">fechaEdicion: anObject	fechaEdicion := anObject</body>
+
+<body package="Biblioteca" selector="iSSN">iSSN	^ISSN</body>
+
+<body package="Biblioteca" selector="editorial">editorial	^editorial</body>
+
+<body package="Biblioteca" selector="iSSN:">iSSN: anObject	ISSN := anObject</body>
+
+<body package="Biblioteca" selector="titulo">titulo	^titulo</body>
+
+<body package="Biblioteca" selector="editorial:">editorial: anObject	editorial := anObject</body>
+
+<body package="Biblioteca" selector="titulo:">titulo: anObject	titulo := anObject</body>
+
+<body package="Biblioteca" selector="iSBN">iSBN	^ISBN</body>
+
+<body package="Biblioteca" selector="idMaterial:">idMaterial: anObject	idMaterial := anObject</body>
+
+<body package="Biblioteca" selector="palabrasClave:">palabrasClave: anObject	palabrasClave := anObject</body>
+
+<body package="Biblioteca" selector="fechaEdicion">fechaEdicion	^fechaEdicion</body>
+</methods>
+
+<methods>
+<class-id>Material</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Edit the following to properly initialize instance variables ***"	idMaterial := nil.	titulo := nil.	fechaEdicion := nil.	editorial := nil.	ISBN := nil.	ISSN := nil.	palabrasClave := nil.	" *** And replace this comment with additional initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Libro</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Revista</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Software</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Video</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Ejemplar class</class-id> <category>instance creation</category>
+
+<body package="Biblioteca" selector="new">new	"Answer a newly created and initialized instance."	^super new initialize</body>
+</methods>
+
+
+<methods>
+<class-id>Ejemplar</class-id> <category>accessing</category>
+
+<body package="Biblioteca" selector="idEjemplar">idEjemplar	^idEjemplar</body>
+
+<body package="Biblioteca" selector="estado:">estado: anObject	estado := anObject</body>
+
+<body package="Biblioteca" selector="fechaAlta:">fechaAlta: anObject	fechaAlta := anObject</body>
+
+<body package="Biblioteca" selector="fechaBaja:">fechaBaja: anObject	fechaBaja := anObject</body>
+
+<body package="Biblioteca" selector="fechaAlta">fechaAlta	^fechaAlta</body>
+
+<body package="Biblioteca" selector="fechaBaja">fechaBaja	^fechaBaja</body>
+
+<body package="Biblioteca" selector="estado">estado	^estado</body>
+
+<body package="Biblioteca" selector="idMaterial">idMaterial	^idMaterial</body>
+
+<body package="Biblioteca" selector="idMaterial:">idMaterial: anObject	idMaterial := anObject</body>
+
+<body package="Biblioteca" selector="idEjemplar:">idEjemplar: anObject	idEjemplar := anObject</body>
+</methods>
+
+<methods>
+<class-id>Ejemplar</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Edit the following to properly initialize instance variables ***"	idEjemplar := nil.	idMaterial := nil.	fechaAlta := nil.	fechaBaja := nil.	estado := nil.	" *** And replace this comment with additional initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Prestamo class</class-id> <category>instance creation</category>
+
+<body package="Biblioteca" selector="new">new	"Answer a newly created and initialized instance."	^super new initialize</body>
+</methods>
+
+
+<methods>
+<class-id>Prestamo</class-id> <category>accessing</category>
+
+<body package="Biblioteca" selector="idEjemplar:">idEjemplar: anObject	idEjemplar := anObject</body>
+
+<body package="Biblioteca" selector="idPersona">idPersona	^idPersona</body>
+
+<body package="Biblioteca" selector="fechaEDev">fechaEDev	^fechaEDev</body>
+
+<body package="Biblioteca" selector="fechaRDev">fechaRDev	^fechaRDev</body>
+
+<body package="Biblioteca" selector="idEjemplar">idEjemplar	^idEjemplar</body>
+
+<body package="Biblioteca" selector="fechaPrestamo:">fechaPrestamo: anObject	fechaPrestamo := anObject</body>
+
+<body package="Biblioteca" selector="idPersona:">idPersona: anObject	idPersona := anObject</body>
+
+<body package="Biblioteca" selector="fechaPrestamo">fechaPrestamo	^fechaPrestamo</body>
+
+<body package="Biblioteca" selector="fechaEDev:">fechaEDev: anObject	fechaEDev := anObject</body>
+
+<body package="Biblioteca" selector="fechaRDev:">fechaRDev: anObject	fechaRDev := anObject</body>
+</methods>
+
+<methods>
+<class-id>Prestamo</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Edit the following to properly initialize instance variables ***"	idPersona := nil.	fechaPrestamo := nil.	idEjemplar := nil.	fechaEDev := nil.	fechaRDev := nil.	" *** And replace this comment with additional initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>Cobro class</class-id> <category>instance creation</category>
+
+<body package="Biblioteca" selector="new">new	"Answer a newly created and initialized instance."	^super new initialize</body>
+</methods>
+
+
+<methods>
+<class-id>Cobro</class-id> <category>accessing</category>
+
+<body package="Biblioteca" selector="monto">monto	^monto</body>
+
+<body package="Biblioteca" selector="fechaCobro">fechaCobro	^fechaCobro</body>
+
+<body package="Biblioteca" selector="idUsuario:">idUsuario: anObject	idUsuario := anObject</body>
+
+<body package="Biblioteca" selector="idUsuario">idUsuario	^idUsuario</body>
+
+<body package="Biblioteca" selector="fechaCobro:">fechaCobro: anObject	fechaCobro := anObject</body>
+
+<body package="Biblioteca" selector="monto:">monto: anObject	monto := anObject</body>
+</methods>
+
+<methods>
+<class-id>Cobro</class-id> <category>initialize-release</category>
+
+<body package="Biblioteca" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Edit the following to properly initialize instance variables ***"	idUsuario := nil.	fechaCobro := nil.	monto := nil.	" *** And replace this comment with additional initialization code *** "	^self</body>
+</methods>
+
+
+
+</st-source>
